@@ -192,6 +192,12 @@ Get the Caps
 #(apply str(filter (set (map char (range 65 91))) %)) 
 ```
 
+#####Problem 30
+Compress a Sequence
+```clojure
+#(map first (partition-by identity %))  
+```
+
 #####Problem 32 
 Duplicate a Sequence
 ```clojure
