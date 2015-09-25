@@ -233,6 +233,14 @@ Maximum value
   (last (sort args)))
 ```
 
+#####Problem 39
+Interleave Two Seqs
+```clojure
+#(flatten (map (fn [f s]
+                      (conj '() s f))
+                    %1 %2))
+```
+
 #####Problem 48
 Intro to some
 ```clojure
