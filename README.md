@@ -241,6 +241,12 @@ Interleave Two Seqs
                     %1 %2))
 ```
 
+#####Problem 42
+Factorial Fun
+```clojure
+#(apply * (range 1 (+ 1 %)))
+```
+
 #####Problem 48
 Intro to some
 ```clojure
