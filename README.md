@@ -208,6 +208,14 @@ Duplicate a Sequence
                   [] %)) 
 ```
 
+#####Problem 33 
+Replicate a Sequence
+```clojure
+#(mapcat (fn [item]                                                      
+             (take %2 (repeat item)))                                              
+          %1) 
+```
+
 #####Problem 34
 Implement range
 ```clojure
