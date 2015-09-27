@@ -261,6 +261,12 @@ Factorial Fun
 #(apply * (range 1 (+ 1 %)))
 ```
 
+#####Problem 45
+Intro to Iterate
+```clojure
+'(1 4 7 10 13)
+```
+
 #####Problem 47
 Contain Yourself
 ```clojure
