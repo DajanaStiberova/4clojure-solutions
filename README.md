@@ -255,6 +255,13 @@ Interleave Two Seqs
                     %1 %2))
 ```
 
+#####Problem 40
+Interpose a Seq
+```clojure
+#(take (- (* 2 (count %2)) 1)
+       (interleave %2 (repeat %1)))
+```
+
 #####Problem 42
 Factorial Fun
 ```clojure
