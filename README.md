@@ -300,6 +300,12 @@ Intro to some
 6
 ```
 
+#####Problem 52
+Intro to some
+```clojure
+[c e]
+```
+
 #####Problem 57
 Simple Recursion
 ```clojure
