@@ -198,6 +198,12 @@ Compress a Sequence
 #(map first (partition-by identity %))  
 ```
 
+#####Problem 31
+Pack a Sequence
+```clojure
+#(partition-by identity %)  
+```
+
 #####Problem 32 
 Duplicate a Sequence
 ```clojure
