@@ -268,6 +268,14 @@ Interpose a Seq
        (interleave %2 (repeat %1)))
 ```
 
+#####Problem 41
+Drop Every Nth Item
+```clojure
+#(mapcat (fn [a] 
+           (take (- %2 1) a)) 
+         (partition-all %2 %1))
+```
+
 #####Problem 42
 Factorial Fun
 ```clojure
