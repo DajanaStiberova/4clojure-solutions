@@ -306,6 +306,12 @@ Split a sequence
 #(vector (take %1 %2) (drop %1 %2))
 ```
 
+#####Problem 51
+Advanced Destructuring
+```clojure
+[1 2 3 4 5]
+```
+
 
 #####Problem 52
 Intro to some
