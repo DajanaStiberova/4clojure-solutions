@@ -300,6 +300,12 @@ Intro to some
 6
 ```
 
+#####Problem 49
+Split a sequence
+```clojure
+#(vector (take %1 %2) (drop %1 %2))
+```
+
 #####Problem 52
 Intro to some
 ```clojure
