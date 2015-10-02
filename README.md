@@ -369,6 +369,16 @@ Rearranging Code: ->>
 reduce +
 ```
 
+#####Problem 81
+Set Intersection
+```clojure
+#(apply sorted-set 
+        (filter 
+         (fn [x] 
+           (contains? %1 x)) 
+         %2)) 
+```
+
 #####Problem 83
 A Half-Truth
 ```clojure
