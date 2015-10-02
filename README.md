@@ -340,6 +340,17 @@ Intro to reduce
 +
 ```
 
+#####Problem 66
+Greatest Common Divisor
+```clojure
+#(loop [a (max %1 %2)
+        b (min %1 %2)
+        r (rem a b)]
+   (if (= r 0)
+     b
+     (recur b r (rem b r))))
+```
+
 #####Problem 68
 Recurring Theme
 ```clojure
