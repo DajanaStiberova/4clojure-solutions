@@ -458,6 +458,17 @@
 <div class="highlight highlight-source-clojure"><pre>reduce +</pre></div>
 
 <h5>
+<a id="problem-81" class="anchor" href="#problem-81" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 81</h5>
+
+<p>Set Intersection</p>
+
+<div class="highlight highlight-source-clojure"><pre>#(<span class="pl-en">apply</span> sorted-set 
+        (<span class="pl-en">filter</span> 
+         (<span class="pl-k">fn</span> [x] 
+           (<span class="pl-en">contains?</span> %<span class="pl-c1">1</span> x)) 
+         %<span class="pl-c1">2</span>)) </pre></div>
+
+<h5>
 <a id="problem-83" class="anchor" href="#problem-83" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 83</h5>
 
 <p>A Half-Truth</p>
