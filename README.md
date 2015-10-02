@@ -349,6 +349,14 @@ Rearranging Code: ->>
 reduce +
 ```
 
+#####Problem 83
+A Half-Truth
+```clojure
+(fn [& args]
+  (and (contains? (set args) false)
+       (contains? (set args) true))) 
+```
+
 #####Problem 134
 A nil key
 ```clojure
