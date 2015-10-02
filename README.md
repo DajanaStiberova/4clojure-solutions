@@ -325,6 +325,15 @@ Simple Recursion
 '(5 4 3 2 1)
 ```
 
+#####Problem 61
+Map Construction
+```clojure
+#(apply merge (map (fn [k v]
+                           {k v})
+                         %1
+                         %2))
+```
+
 #####Problem 64
 Intro to reduce
 ```clojure
