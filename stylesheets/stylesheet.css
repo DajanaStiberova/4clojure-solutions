@@ -10,7 +10,7 @@ body {
   color: #606c71; }
 
 a {
-  color: #1e6bb8;
+  color: #121213;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -18,9 +18,9 @@ a {
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: rgb(119, 111, 111);
+  background-color: rgba(216, 212, 212, 0.08);
+  border-color: rgba(210, 202, 202, 0.2);
   border-style: solid;
   border-width: 1px;
   border-radius: 0.3rem;
@@ -31,7 +31,7 @@ a {
 .btn:hover {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(119, 111, 111);
   border-color: rgba(255, 255, 255, 0.3); }
 
 @media screen and (min-width: 64em) {
@@ -53,11 +53,13 @@ a {
       margin-top: 1rem;
       margin-left: 0; } }
 
+
 .page-header {
-  color: #fff;
-  text-align: center;
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+    color: #383232;
+    text-align: center;
+    /* background-color: #159957; */
+    background-image: url('https://cloud.githubusercontent.com/assets/9211809/10264111/9db46e90-6a03-11e5-8243-7a2600be3398.png');
+}
 
 @media screen and (min-width: 64em) {
   .page-header {
@@ -112,7 +114,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957; }
+  color: #e14d6d; }
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -129,9 +131,7 @@ a {
   font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
   color: #567482;
   word-wrap: normal;
-  background-color: #f3f6fa;
-  border: solid 1px #dce6f0;
-  border-radius: 0.3rem; }
+  background-color: rgba(0, 0, 0, 0.04); }
   .main-content pre > code {
     padding: 0;
     margin: 0;
@@ -243,3 +243,4 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
