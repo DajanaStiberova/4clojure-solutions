@@ -59,6 +59,7 @@ a {
     text-align: center;
     /* background-color: #159957; */
     background-image: url('https://cloud.githubusercontent.com/assets/9211809/10264111/9db46e90-6a03-11e5-8243-7a2600be3398.png');
+}
 
 @media screen and (min-width: 64em) {
   .page-header {
