@@ -334,6 +334,13 @@ Map Construction
                          %2))
 ```
 
+#####Problem 62
+Re-implement Iterate
+```clojure
+(fn my-iterate [fnc x]
+        (cons x (lazy-seq (my-iterate fnc (fnc x)))))
+```
+
 #####Problem 64
 Intro to reduce
 ```clojure
