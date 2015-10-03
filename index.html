@@ -406,6 +406,14 @@
                          %<span class="pl-c1">2</span>))</pre></div>
 
 <h5>
+<a id="problem-62" class="anchor" href="#problem-62" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 62</h5>
+
+<p>Re-implement Iterate</p>
+
+<div class="highlight highlight-source-clojure"><pre>(<span class="pl-k">fn</span> my-iterate [fnc x]
+        (<span class="pl-en">cons</span> x (<span class="pl-en">lazy-seq</span> (<span class="pl-en">my-iterate</span> fnc (<span class="pl-en">fnc</span> x)))))</pre></div>
+
+<h5>
 <a id="problem-64" class="anchor" href="#problem-64" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 64</h5>
 
 <p>Intro to reduce</p>
