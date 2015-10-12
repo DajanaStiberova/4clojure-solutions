@@ -394,6 +394,15 @@ A Half-Truth
        (contains? (set args) true))) 
 ```
 
+#####Problem 90
+Cartesian Product
+```clojure
+#(set 
+  (for [x %1
+        y %2]
+   [x y]))
+```
+
 #####Problem 99
 Product Digits
 ```clojure
