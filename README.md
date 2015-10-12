@@ -394,6 +394,13 @@ A Half-Truth
        (contains? (set args) true))) 
 ```
 
+#####Problem 107
+Simple closures
+```clojure
+#(fn [y]
+    (apply * (repeat % y))) 
+```
+
 #####Problem 134
 A nil key
 ```clojure
