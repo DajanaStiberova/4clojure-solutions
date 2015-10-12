@@ -394,6 +394,16 @@ A Half-Truth
        (contains? (set args) true))) 
 ```
 
+#####Problem 99
+Product Digits
+```clojure
+#(->> (* %1 %2)
+      str
+      seq
+      (map (comp read-string str)))
+```
+
+
 #####Problem 107
 Simple closures
 ```clojure
