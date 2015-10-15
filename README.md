@@ -435,6 +435,16 @@ Simple closures
     (apply * (repeat % y))) 
 ```
 
+#####Problem 122
+Read a binary number
+```clojure
+(fn [s] 
+  (apply + (map (fn [x]
+                    (apply * (repeat x 2)))
+                (keep-indexed #(if (= 1 %2) %1) 
+                              (mapv (comp read-string str) (reverse s))))))
+```
+
 #####Problem 134
 A nil key
 ```clojure
