@@ -445,6 +445,12 @@ Read a binary number
                               (mapv (comp read-string str) (reverse s))))))
 ```
 
+#####Problem 126
+Through the Looking Class
+```clojure
+java.lang.Class
+```
+
 #####Problem 134
 A nil key
 ```clojure
