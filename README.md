@@ -341,6 +341,16 @@ Re-implement Iterate
         (cons x (lazy-seq (my-iterate fnc (fnc x)))))
 ```
 
+#####Problem 63
+Group a Sequence
+```clojure
+Group a Sequence
+#(apply merge-with concat 
+       (map (fn [item] 
+              (hash-map (%1 item) [item]))
+        %2))
+```
+
 #####Problem 64
 Intro to reduce
 ```clojure
