@@ -403,6 +403,12 @@ A Half-Truth
        (contains? (set args) true))) 
 ```
 
+#####Problem 88
+Symmetric Difference
+```clojure
+#(set (concat (apply disj %1 %2) (apply disj %2 %1)))
+```
+
 #####Problem 90
 Cartesian Product
 ```clojure
