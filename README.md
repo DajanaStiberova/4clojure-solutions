@@ -453,6 +453,12 @@ A nil key
       (nil? (m k))))
 ```
 
+#####Problem 143
+dot product
+```clojure
+#(apply + (map * %1 %2))
+```
+
 #####Problem 145
 For the win
 ```clojure
