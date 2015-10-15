@@ -414,6 +414,16 @@
         (<span class="pl-en">cons</span> x (<span class="pl-en">lazy-seq</span> (<span class="pl-en">my-iterate</span> fnc (<span class="pl-en">fnc</span> x)))))</pre></div>
 
 <h5>
+<a id="problem-63" class="anchor" href="#problem-63" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 63</h5>
+
+<p>Group a Sequence</p>
+
+<div class="highlight highlight-source-clojure"><pre>#(<span class="pl-en">apply</span> merge-with concat 
+       (<span class="pl-en">map</span> (<span class="pl-k">fn</span> [item] 
+              (<span class="pl-en">hash-map</span> (<span class="pl-en">%1</span> item) [item]))
+        %<span class="pl-c1">2</span>))</pre></div>
+
+<h5>
 <a id="problem-64" class="anchor" href="#problem-64" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 64</h5>
 
 <p>Intro to reduce</p>
@@ -474,6 +484,52 @@
        (<span class="pl-en">contains?</span> (<span class="pl-en">set</span> args) <span class="pl-c1">true</span>))) </pre></div>
 
 <h5>
+<a id="problem-88" class="anchor" href="#problem-88" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 88</h5>
+
+<p>Symmetric Difference</p>
+
+<div class="highlight highlight-source-clojure"><pre>#(<span class="pl-en">set</span> (<span class="pl-en">concat</span> (<span class="pl-en">apply</span> disj %<span class="pl-c1">1</span> %<span class="pl-c1">2</span>) (<span class="pl-en">apply</span> disj %<span class="pl-c1">2</span> %<span class="pl-c1">1</span>)))</pre></div>
+
+<h5>
+<a id="problem-90" class="anchor" href="#problem-90" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 90</h5>
+
+<p>Cartesian Product</p>
+
+<div class="highlight highlight-source-clojure"><pre>#(<span class="pl-en">set</span> 
+  (<span class="pl-k">for</span> [x %<span class="pl-c1">1</span>
+        y %<span class="pl-c1">2</span>]
+   [x y]))</pre></div>
+
+<h5>
+<a id="problem-99" class="anchor" href="#problem-99" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 99</h5>
+
+<p>Product Digits</p>
+
+<div class="highlight highlight-source-clojure"><pre>#(<span class="pl-en">-&gt;&gt;</span> (<span class="pl-en">*</span> %<span class="pl-c1">1</span> %<span class="pl-c1">2</span>)
+      str
+      seq
+      (<span class="pl-en">map</span> (<span class="pl-en">comp</span> read-string str)))</pre></div>
+
+<h5>
+<a id="problem-107" class="anchor" href="#problem-107" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 107</h5>
+
+<p>Simple closures</p>
+
+<div class="highlight highlight-source-clojure"><pre>#(<span class="pl-k">fn</span> [y]
+    (<span class="pl-en">apply</span> * (<span class="pl-en">repeat</span> % y))) </pre></div>
+
+<h5>
+<a id="problem-122" class="anchor" href="#problem-122" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 122</h5>
+
+<p>Read a binary number</p>
+
+<div class="highlight highlight-source-clojure"><pre>(<span class="pl-k">fn</span> [s] 
+  (<span class="pl-en">apply</span> + (<span class="pl-en">map</span> (<span class="pl-k">fn</span> [x]
+                    (<span class="pl-en">apply</span> * (<span class="pl-en">repeat</span> x <span class="pl-c1">2</span>)))
+                (<span class="pl-en">keep-indexed</span> #(<span class="pl-k">if</span> (<span class="pl-en">=</span> <span class="pl-c1">1</span> %<span class="pl-c1">2</span>) %<span class="pl-c1">1</span>) 
+                              (<span class="pl-en">mapv</span> (<span class="pl-en">comp</span> read-string str) (<span class="pl-en">reverse</span> s))))))</pre></div>
+
+<h5>
 <a id="problem-134" class="anchor" href="#problem-134" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 134</h5>
 
 <p>A nil key</p>
@@ -528,6 +584,16 @@
 
     </section>
 
-  
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("&lt;script&gt;   (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);    ga(&#39;create&#39;, &#39;UA-68914264-1&#39;, &#39;auto&#39;);   ga(&#39;send&#39;, &#39;pageview&#39;);  &lt;/script&gt;");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
