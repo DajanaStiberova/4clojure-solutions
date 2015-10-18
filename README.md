@@ -459,6 +459,17 @@ A nil key
       (nil? (m k))))
 ```
 
+#####Problem 135
+Infix Calculator
+```clojure
+(fn infix-calculator [& args]
+        (let [[first-operand operator second-operand] (take 3 args)
+              result (operator first-operand second-operand)]
+          (if (= (count args) 3)
+            result
+            (apply infix-calculator (cons result (drop 3 args))))))
+ ```
+
 #####Problem 143
 dot product
 ```clojure
