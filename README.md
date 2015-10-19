@@ -418,6 +418,15 @@ Cartesian Product
    [x y]))
 ```
 
+#####Problem 97
+Pascal's Triangle
+```clojure
+ (fn pascal [row]
+      (map (comp last take)
+           (reverse (range 1 (+ 1 row)))
+           (take row (iterate (partial reductions +) (take row (repeat 1))))))
+```
+
 #####Problem 99
 Product Digits
 ```clojure
