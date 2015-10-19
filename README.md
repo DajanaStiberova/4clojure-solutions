@@ -488,6 +488,13 @@ Map Defaults
 #(zipmap %2 (repeat %1))
 ```
 
+#####Problem 157
+Indexing Sequences
+```clojure
+#(map-indexed (fn [itm idx] 
+                [idx itm])%)
+```
+
 #####Problem 161
 Subset and Superset
 ```clojure
