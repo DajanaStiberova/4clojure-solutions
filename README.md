@@ -418,6 +418,17 @@ Cartesian Product
    [x y]))
 ```
 
+#####Problem 95
+To Tree, or not to Tree
+```clojure
+(fn tree [coll]
+        (let [inner-coll (first (filter coll? coll))	
+              is-binary (odd? (count (filter #(and (not= % true) (not= % false)) (flatten coll))))]               
+          (if (and is-binary (= (count inner-coll) 3)) 
+            (tree inner-coll)
+           	is-binary)))
+```
+
 #####Problem 97
 Pascal's Triangle
 ```clojure
