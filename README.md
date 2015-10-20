@@ -436,12 +436,20 @@ Product Digits
       (map (comp read-string str)))
 ```
 
-
 #####Problem 107
 Simple closures
 ```clojure
 #(fn [y]
     (apply * (repeat % y))) 
+```
+
+#####Problem 118
+Re-implement Map
+```clojure
+(fn my-map [f s]
+      (when (seq s)
+        (cons (f (first s))
+              (lazy-seq (my-map f (rest s))))))
 ```
 
 #####Problem 122
