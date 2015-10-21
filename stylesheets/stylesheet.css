@@ -16,9 +16,6 @@ text-decoration: underline; }
 display: inline-block;
 margin-bottom: 1rem;
 color: rgb(119, 111, 111);
-background-color: rgba(216, 212, 212, 0.08);
-border-color: rgba(210, 202, 202, 0.2);
-border-style: solid;
 border-width: 1px;
 border-radius: 0.3rem;
 transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
@@ -34,8 +31,8 @@ border-color: rgba(255, 255, 255, 0.3); }
 padding: 0.75rem 1rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) {
 .btn {
-padding: 0.6rem 0.9rem;
-font-size: 0.9rem; } }
+padding: 0.25rem 0.9rem;
+font-size: 25px; } }
 @media screen and (max-width: 42em) {
 .btn {
 display: block;
