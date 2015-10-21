@@ -463,6 +463,19 @@ Re-implement Map
               (lazy-seq (my-map f (rest s))))))
 ```
 
+#####Problem 120
+Sum of square of digits
+```clojure
+(fn [seq]
+        (-> (fn [item]
+              (if (> 10 item)
+                (< item (* item item))
+                (< item (apply + (map (comp #(* % %) read-string str first)
+                                      (split-at 1 (str item)))))))
+            (filter seq)
+            count))
+```
+
 #####Problem 122
 Read a binary number
 ```clojure
