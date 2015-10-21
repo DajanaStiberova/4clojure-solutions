@@ -14,6 +14,7 @@ a:hover {
 text-decoration: underline; }
 .btn {
 display: inline-block;
+font-size: 25px;
 margin-bottom: 1rem;
 color: rgb(119, 111, 111);
 border-width: 1px;
