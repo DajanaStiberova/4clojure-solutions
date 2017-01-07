@@ -282,6 +282,14 @@ Factorial Fun
 #(apply * (range 1 (+ 1 %)))
 ```
 
+#####Problem 43
+Reverse Interleave
+```clojure
+#(apply map (fn [& args]
+              args)
+       (partition %2 %1))
+```
+
 #####Problem 45
 Intro to Iterate
 ```clojure
