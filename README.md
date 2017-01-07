@@ -344,6 +344,12 @@ Split a sequence
 #(vector (take %1 %2) (drop %1 %2))
 ```
 
+#####Problem 50
+Split by Type
+```clojure
+#(vals (group-by type %))
+```
+
 #####Problem 51
 Advanced Destructuring
 ```clojure
