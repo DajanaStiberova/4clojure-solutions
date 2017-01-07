@@ -290,6 +290,29 @@ Reverse Interleave
        (partition %2 %1))
 ```
 
+#####Problem44
+Rotate Sequence
+```clojure
+#(let [new-coll (if (pos? %1)
+                   %2
+                   (reverse %2))
+        new-position (if (pos? %1)
+                       %1
+                       (+ %1 (* -2 %1)))
+        real-position (mod new-position (count %2))
+        rotated (flatten
+                 (reduce
+                  (fn [[acc-x acc-y] [x y]]
+                    (if (< x real-position)
+                      [acc-x (conj acc-y y)]
+                      [(conj acc-x y) acc-y]))
+                  [[] []]
+                  (map-indexed vector new-coll)))]
+    (if (pos? %1) 
+      rotated 
+      (reverse rotated)))
+```
+
 #####Problem 45
 Intro to Iterate
 ```clojure
