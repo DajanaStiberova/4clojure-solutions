@@ -290,7 +290,7 @@ Reverse Interleave
        (partition %2 %1))
 ```
 
-#####Problem44
+#####Problem 44
 Rotate Sequence
 ```clojure
 #(let [new-coll (if (pos? %1)
