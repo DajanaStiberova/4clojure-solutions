@@ -363,6 +363,15 @@ Intro to some
 [c e]
 ```
 
+#####Problem 55
+Count Occurrences
+```clojure
+#(into (sorted-map)
+        (map (fn [[k v]]
+               {k (count v)})
+             (group-by identity %)))
+```
+
 #####Problem 57
 Simple Recursion
 ```clojure
