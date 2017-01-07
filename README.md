@@ -319,6 +319,13 @@ Intro to Iterate
 '(1 4 7 10 13)
 ```
 
+#####Problem 46
+Flipping out
+```
+#(fn [x y]
+    (% y x))
+```
+
 #####Problem 47
 Contain Yourself
 ```clojure
