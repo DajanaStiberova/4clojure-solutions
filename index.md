@@ -25,7 +25,7 @@ Intro to Strings
 Intro to Lists
 
 ```clojure
- :a :b :c
+:a :b :c
 ```
 
 ##### Problem 5
@@ -39,77 +39,77 @@ Lists: conj
 Intro to Vectors
 
 ```clojure
- :a :b :c
+:a :b :c
 ```
 
 ##### Problem 7
 Vectors: conj
 
 ```clojure
- [1 2 3 4]
+[1 2 3 4]
 ```
 
 ##### Problem 8
 Intro to Sets
 
 ```clojure
- #{:a :b :c :d}
+#{:a :b :c :d}
 ```
 
 ##### Problem 9
 Sets: conj
 
 ```clojure
- 2
+2
 ```
 
 ##### Problem 10
 Intro to Maps
 
 ```clojure
- 20
+20
 ```
 
 ##### Problem 11
 Maps: conj
 
 ```clojure
- [:b 2]
+[:b 2]
 ```
 
 ##### Problem 12
 Intro to Sequences
 
 ```clojure
- 3
+3
 ```
 
 ##### Problem 13
 Sequences: rest
 
 ```clojure
- '(20 30 40)
+'(20 30 40)
 ```
 
 ##### Problem 14
 Intro to Functions
 
 ```clojure
- 8
+8
 ```
 
 ##### Problem 15
 Double Down
 
 ```clojure
- #(* 2 %)
+#(* 2 %)
 ```
 
 ##### Problem 16
 Hello World
 
 ```clojure
- #(str "Hello, " % "!")
+#(str "Hello, " % "!")
 ```
 
 ##### Problem 17
@@ -152,8 +152,8 @@ Count a Sequence
 
 ```clojure
 #(reduce (fn [acc x]
-                  (inc acc))
-              0 %)
+(inc acc))
+0 %)
 ```
 
 ##### Problem 23
@@ -161,8 +161,8 @@ Reverse a Sequence
 
 ```clojure
 #(reduce (fn [acc x]
-            (cons x acc)) 
-            (empty %) %)
+(cons x acc))
+(empty %) %)
 ```
 
 ##### Problem 24
@@ -177,20 +177,20 @@ Find the odd numbers
 
 ```clojure
 #(reverse (reduce (fn [acc x]
-                         (if (odd? x)
-                           (conj acc x)
-                           acc))
-                       '() %))
+(if (odd? x)
+(conj acc x)
+acc))
+'() %))
 ```
 
 ##### Problem 26
 Fibonacci Sequence
 
 ```clojure
-#(loop [x [1 1]]                                                                    
-         (if (= (count x) %)                                             
-          x                                                                        
-          (recur (conj x (apply + (take 2 (reverse x)))))))
+#(loop [x [1 1]]
+(if (= (count x) %)
+x
+(recur (conj x (apply + (take 2 (reverse x)))))))
 ```
 
 
@@ -199,8 +199,8 @@ Palindrome Detector
 
 ```clojure
 (if (string? %)
-   (= (clojure.string/reverse %) %) 
-   (= (reverse %) %))
+(= (clojure.string/reverse %) %)
+(= (reverse %) %))
 ```
 
 ##### Problem 28
@@ -208,52 +208,52 @@ Flatten a Sequence
 
 ```clojure
 #(reverse (reduce
-                (fn rec-flatten [acc item]
-                  (if (coll? item) (reduce rec-flatten acc item)
-                      (conj acc item)))
-                '()
-                %))
+(fn rec-flatten [acc item]
+(if (coll? item) (reduce rec-flatten acc item)
+(conj acc item)))
+'()
+%))
 ```
 
 ##### Problem 29
 Get the Caps
 
 ```clojure
-#(apply str(filter (set (map char (range 65 91))) %)) 
+#(apply str(filter (set (map char (range 65 91))) %))
 ```
 
 ##### Problem 30
 Compress a Sequence
 
 ```clojure
-#(map first (partition-by identity %))  
+#(map first (partition-by identity %))
 ```
 
 ##### Problem 31
 Pack a Sequence
 
 ```clojure
-#(partition-by identity %)  
+#(partition-by identity %)
 ```
 
-##### Problem 32 
+##### Problem 32
 Duplicate a Sequence
 
 ```clojure
-#(seq (reduce (fn [acc item]                                                         
-                     (-> acc                                                              
-                         (conj item)                                                      
-                         (conj item)))                                                    
-                  [] %)) 
+#(seq (reduce (fn [acc item]
+(-> acc
+(conj item)
+(conj item)))
+[] %))
 ```
 
-##### Problem 33 
+##### Problem 33
 Replicate a Sequence
 
 ```clojure
-#(mapcat (fn [item]                                                      
-             (take %2 (repeat item)))                                              
-          %1) 
+#(mapcat (fn [item]
+(take %2 (repeat item)))
+%1)
 ```
 
 ##### Problem 34
@@ -289,7 +289,7 @@ Maximum value
 
 ```clojure
 (fn [& args]
-  (last (sort args)))
+(last (sort args)))
 ```
 
 ##### Problem 39
@@ -297,8 +297,8 @@ Interleave Two Seqs
 
 ```clojure
 #(flatten (map (fn [f s]
-                      (conj '() s f))
-                    %1 %2))
+(conj '() s f))
+%1 %2))
 ```
 
 ##### Problem 40
@@ -306,16 +306,16 @@ Interpose a Seq
 
 ```clojure
 #(take (- (* 2 (count %2)) 1)
-       (interleave %2 (repeat %1)))
+(interleave %2 (repeat %1)))
 ```
 
 ##### Problem 41
 Drop Every Nth Item
 
 ```clojure
-#(mapcat (fn [a] 
-           (take (- %2 1) a)) 
-         (partition-all %2 %1))
+#(mapcat (fn [a]
+(take (- %2 1) a))
+(partition-all %2 %1))
 ```
 
 ##### Problem 42
@@ -325,11 +325,52 @@ Factorial Fun
 #(apply * (range 1 (+ 1 %)))
 ```
 
+##### Problem 43
+Reverse Interleave
+
+```clojure
+#(apply map (fn [& args]
+args)
+(partition %2 %1))
+```
+
+##### Problem 44
+Rotate Sequence
+
+```clojure
+#(let [new-coll (if (pos? %1)
+%2
+(reverse %2))
+new-position (if (pos? %1)
+%1
+(+ %1 (* -2 %1)))
+real-position (mod new-position (count %2))
+rotated (flatten
+(reduce
+(fn [[acc-x acc-y] [x y]]
+(if (< x real-position)
+[acc-x (conj acc-y y)]
+[(conj acc-x y) acc-y]))
+[[] []]
+(map-indexed vector new-coll)))]
+(if (pos? %1)
+rotated
+(reverse rotated)))
+```
+
 ##### Problem 45
 Intro to Iterate
 
 ```clojure
 '(1 4 7 10 13)
+```
+
+##### Problem 46
+Flipping out
+
+```clojure
+#(fn [x y]
+(% y x))
 ```
 
 ##### Problem 47
@@ -353,6 +394,13 @@ Split a sequence
 #(vector (take %1 %2) (drop %1 %2))
 ```
 
+##### Problem 50
+Split by Type
+
+```clojure
+#(vals (group-by type %))
+```
+
 ##### Problem 51
 Advanced Destructuring
 
@@ -360,12 +408,21 @@ Advanced Destructuring
 [1 2 3 4 5]
 ```
 
-
 ##### Problem 52
 Intro to some
 
 ```clojure
 [c e]
+```
+
+##### Problem 55
+Count Occurrences
+
+```clojure
+#(into (sorted-map)
+(map (fn [[k v]]
+{k (count v)})
+(group-by identity %)))
 ```
 
 ##### Problem 57
@@ -380,9 +437,9 @@ Map Construction
 
 ```clojure
 #(apply merge (map (fn [k v]
-                           {k v})
-                         %1
-                         %2))
+{k v})
+%1
+%2))
 ```
 
 ##### Problem 62
@@ -390,17 +447,17 @@ Re-implement Iterate
 
 ```clojure
 (fn my-iterate [fnc x]
-        (cons x (lazy-seq (my-iterate fnc (fnc x)))))
+(cons x (lazy-seq (my-iterate fnc (fnc x)))))
 ```
 
 ##### Problem 63
 Group a Sequence
 
 ```clojure
-#(apply merge-with concat 
-       (map (fn [item] 
-              (hash-map (%1 item) [item]))
-        %2))
+#(apply merge-with concat
+(map (fn [item]
+(hash-map (%1 item) [item]))
+%2))
 ```
 
 ##### Problem 64
@@ -415,11 +472,11 @@ Greatest Common Divisor
 
 ```clojure
 #(loop [a (max %1 %2)
-        b (min %1 %2)
-        r (rem a b)]
-   (if (= r 0)
-     b
-     (recur b r (rem b r))))
+b (min %1 %2)
+r (rem a b)]
+(if (= r 0)
+b
+(recur b r (rem b r))))
 ```
 
 ##### Problem 68
@@ -446,11 +503,11 @@ reduce +
 Set Intersection
 
 ```clojure
-#(apply sorted-set 
-        (filter 
-         (fn [x] 
-           (contains? %1 x)) 
-         %2)) 
+#(apply sorted-set
+(filter
+(fn [x]
+(contains? %1 x))
+%2))
 ```
 
 ##### Problem 83
@@ -458,8 +515,8 @@ A Half-Truth
 
 ```clojure
 (fn [& args]
-  (and (contains? (set args) false)
-       (contains? (set args) true))) 
+(and (contains? (set args) false)
+(contains? (set args) true)))
 ```
 
 ##### Problem 88
@@ -473,10 +530,10 @@ Symmetric Difference
 Cartesian Product
 
 ```clojure
-#(set 
-  (for [x %1
-        y %2]
-   [x y]))
+#(set
+(for [x %1
+y %2]
+[x y]))
 ```
 
 ##### Problem 99
@@ -484,9 +541,9 @@ Product Digits
 
 ```clojure
 #(->> (* %1 %2)
-      str
-      seq
-      (map (comp read-string str)))
+str
+seq
+(map (comp read-string str)))
 ```
 
 
@@ -495,18 +552,18 @@ Simple closures
 
 ```clojure
 #(fn [y]
-    (apply * (repeat % y))) 
+(apply * (repeat % y)))
 ```
 
 ##### Problem 122
 Read a binary number
 
 ```clojure
-(fn [s] 
-  (apply + (map (fn [x]
-                    (apply * (repeat x 2)))
-                (keep-indexed #(if (= 1 %2) %1) 
-                              (mapv (comp read-string str) (reverse s))))))
+(fn [s]
+(apply + (map (fn [x]
+(apply * (repeat x 2)))
+(keep-indexed #(if (= 1 %2) %1)
+(mapv (comp read-string str) (reverse s))))))
 ```
 
 ##### Problem 134
@@ -514,8 +571,8 @@ A nil key
 
 ```clojure
 (fn [k m]
- (and (contains? m k)
-      (nil? (m k))))
+(and (contains? m k)
+(nil? (m k))))
 ```
 
 ##### Problem 145
@@ -551,7 +608,7 @@ Comparisons
 
 ```clojure
 #(cond
-  (%1 %2 %3) :lt
-  (%1 %3 %2) :gt
-  :else :eq)
+(%1 %2 %3) :lt
+(%1 %3 %2) :gt
+:else :eq)
 ```
