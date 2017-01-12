@@ -11,10 +11,9 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
-      <a href="http://clojuregirl.com">www.clojuregirl.com</a>
+      <a href="http://clojuregirl.com" class="project-tagline">www.clojuregirl.com</a>
       <!--h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2!-->
-      {% if site.github.is_project_page %}
-      <a href="http://clojuregirl.com">www.clojuregirl.com</a>
+      {% if site.github.is_project_page %} 
       {% endif %}
       {% if site.show_downloads %}
       <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
