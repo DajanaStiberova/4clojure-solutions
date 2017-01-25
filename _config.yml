@@ -6,3 +6,11 @@ theme: jekyll-theme-cayman
 
 gems:
   - jekyll-mentions
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
