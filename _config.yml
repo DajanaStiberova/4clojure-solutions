@@ -10,5 +10,7 @@ gems:
 markdown: kramdown
 
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+ input: GFM
+ hard_wrap: false
+ syntax_highlighter_opts:
+ disable: true
