@@ -20,7 +20,6 @@ Intro to Strings
 ```clojure
 "HELLO WORLD"
 ```
-
 ##### Problem 4
 Intro to Lists
 
@@ -408,6 +407,7 @@ Advanced Destructuring
 [1 2 3 4 5]
 ```
 
+
 ##### Problem 52
 Intro to some
 
@@ -495,6 +495,7 @@ last
 
 ##### Problem 72
 Rearranging Code: ->>
+
 ```clojure
 reduce +
 ```
@@ -536,6 +537,28 @@ y %2]
 [x y]))
 ```
 
+##### Problem 95
+To Tree, or not to Tree
+
+```clojure
+(fn tree [coll]
+(let [inner-coll (first (filter coll? coll))
+is-binary (odd? (count (filter #(and (not= % true) (not= % false)) (flatten coll))))]
+(if (and is-binary (= (count inner-coll) 3))
+(tree inner-coll)
+is-binary)))
+```
+
+##### Problem 97
+Pascal's Triangle
+
+```clojure
+(fn pascal [row]
+(map (comp last take)
+(reverse (range 1 (+ 1 row)))
+(take row (iterate (partial reductions +) (take row (repeat 1))))))
+```
+
 ##### Problem 99
 Product Digits
 
@@ -546,13 +569,36 @@ seq
 (map (comp read-string str)))
 ```
 
-
 ##### Problem 107
 Simple closures
 
 ```clojure
 #(fn [y]
 (apply * (repeat % y)))
+```
+
+##### Problem 118
+Re-implement Map
+
+```clojure
+(fn my-map [f s]
+(when (seq s)
+(cons (f (first s))
+(lazy-seq (my-map f (rest s))))))
+```
+
+##### Problem 120
+Sum of square of digits
+
+```clojure
+(fn [seq]
+(-> (fn [item]
+(if (> 10 item)
+(< item (* item item))
+(< item (apply + (map (comp #(* % %) read-string str first)
+(split-at 1 (str item)))))))
+(filter seq)
+count))
 ```
 
 ##### Problem 122
@@ -566,6 +612,33 @@ Read a binary number
 (mapv (comp read-string str) (reverse s))))))
 ```
 
+##### Problem 126
+Through the Looking Class
+
+```clojure
+java.lang.Class
+```
+
+#### Problem 128
+Recognize Playing Cards
+
+```clojure
+#(let [cards-suits {"S" :spade
+                    "H" :heart
+                    "D" :diamond
+                    "C" :club} 
+       cards-rank (zipmap
+                    (conj (->> (range 2 10)
+                               (map str)
+                               (vec)) 
+                          "T" "J" "Q" "K" "A")
+                    (range 13))
+       card-data (map str (seq %))
+       suit (cards-suits (first card-data))
+       rank (cards-rank (last card-data))]
+   {:suit suit :rank rank})
+```
+
 ##### Problem 134
 A nil key
 
@@ -573,6 +646,25 @@ A nil key
 (fn [k m]
 (and (contains? m k)
 (nil? (m k))))
+```
+
+##### Problem 135
+Infix Calculator
+
+```clojure
+(fn infix-calculator [& args]
+(let [[first-operand operator second-operand] (take 3 args)
+result (operator first-operand second-operand)]
+(if (= (count args) 3)
+result
+(apply infix-calculator (cons result (drop 3 args))))))
+```
+
+##### Problem 143
+dot product
+
+```clojure
+#(apply + (map * %1 %2))
 ```
 
 ##### Problem 145
@@ -587,6 +679,14 @@ Map Defaults
 
 ```clojure
 #(zipmap %2 (repeat %1))
+```
+
+##### Problem 157
+Indexing Sequences
+
+```clojure
+#(map-indexed (fn [itm idx]
+[idx itm])%)
 ```
 
 ##### Problem 161
