@@ -619,6 +619,26 @@ Through the Looking Class
 java.lang.Class
 ```
 
+#### Problem 128
+Recognize Playing Cards
+
+```clojure
+#(let [cards-suits {"S" :spade
+                    "H" :heart
+                    "D" :diamond
+                    "C" :club} 
+       cards-rank (zipmap
+                    (conj (->> (range 2 10)
+                               (map str)
+                               (vec)) 
+                          "T" "J" "Q" "K" "A")
+                    (range 13))
+       card-data (map str (seq %))
+       suit (cards-suits (first card-data))
+       rank (cards-rank (last card-data))]
+   {:suit suit :rank rank})
+```
+
 ##### Problem 134
 A nil key
 
