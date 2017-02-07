@@ -571,6 +571,22 @@ Product Digits
       (map (comp read-string str)))
 ```
 
+##### Problem 100
+Least Common Multiple
+
+```clojure
+(fn [& args]
+  (letfn [(gcd [x y]
+            (if (= x y)
+              x
+              (if (< x y)
+                (recur x (- y x))
+                (recur y (- x y)))))
+          (lcm [x y]
+            (/ (* x y) (gcd x y)))]
+    (reduce lcm args)))
+```
+
 ##### Problem 107
 Simple closures
 
