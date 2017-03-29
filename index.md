@@ -463,6 +463,20 @@ Count Occurrences
             (group-by identity %)))
 ```
 
+##### Problem 56
+Find Distinct Items
+
+```
+(fn [coll]
+  (reduce (fn [acc item]
+            (if ((set acc) item)
+              acc
+              (conj acc item)))
+          []
+          coll))
+
+```
+
 ##### Problem 57
 Simple Recursion
 
