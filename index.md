@@ -409,12 +409,32 @@ Advanced Destructuring
 [1 2 3 4 5]
 ```
 
-
 ##### Problem 52
 Intro to some
 
 ```clojure
 [c e]
+```
+
+#### Problem 53
+Longest Increasing Sub-Seq
+
+```clojure
+(fn [coll]
+  (let [longest-seq (->> (reduce (fn [acc item]
+                                     (cond
+                                         (= (ffirst acc) nil) (conj (rest acc) (conj (first acc) item))
+                                         (= (inc (ffirst acc)) item) (conj (rest acc) (conj (first acc) item))
+                                         :else (conj acc (list item))))
+                                 '(())
+                                 coll)
+                         (sort-by count)
+                         last
+                         reverse
+                         vec)]
+     (if (> (count longest-seq) 1)
+       longest-seq
+       [])))
 ```
 
 ##### Problem 55
