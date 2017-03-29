@@ -438,6 +438,21 @@ Longest Increasing Sub-Seq
        [])))
 ```
 
+##### Problem 54
+Partition a Sequence
+
+```
+(fn [par-num coll]
+  (->> (reduce (fn [acc item]
+                 (if (= (count (first acc)) par-num)
+                   (conj acc (list item))
+                   (conj (rest acc) (conj (first acc) item))))
+               '(())
+               coll)
+       (filter #(= par-num (count %)))
+       (map reverse)
+       reverse))
+```
 
 ##### Problem 55
 Count Occurrences
