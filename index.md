@@ -484,6 +484,18 @@ Simple Recursion
 '(5 4 3 2 1)
 ```
 
+##### Problem 58
+Function Composition
+
+```clojure
+(fn my-comp [& fns]
+  (fn [& args]
+    (if (= (count fns) 1)
+      (apply (first fns) args)
+      ((apply my-comp (butlast fns))
+       (apply (last fns) args)))))
+```
+
 ##### Problem 61
 Map Construction
 
